@@ -2,17 +2,17 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CaptionImagesService {
-  async getProfileTodos(profileId) {
-    return await dbContext.Todos.find({ creatorId: profileId }).populate('creator')
+  async getProfileTodos(userId) {
+    return await dbContext.CaptionImages.find({ creatorId: userId }).populate('submittedUser')
   }
 
   async find(query = {}) {
-    const todos = await dbContext.Todos.find(query).populate('creator')
-    return todos
+    const captionImages = await dbContext.CaptionImages.find(query).populate('creator')
+    return captionImages
   }
 
   async findById(id) {
-    const todo = await dbContext.Todos.findById(id)
+    const todo = await dbContext.CaptionImages.findById(id)
     if (!todo) {
       throw new BadRequest('Invalid Id')
     }
@@ -20,11 +20,11 @@ class CaptionImagesService {
   }
 
   async create(body) {
-    return await dbContext.Todos.create(body)
+    return await dbContext.CaptionImages.create(body)
   }
 
   async edit(todo) {
-    const newTodo = await dbContext.Todos.findOneAndUpdate({ _id: todo.id, creatorId: todo.creatorId }, todo, { new: true }).populate('creator')
+    const newTodo = await dbContext.CaptionImages.findOneAndUpdate({ _id: todo.id, creatorId: todo.creatorId }, todo, { new: true }).populate('creator')
     if (!newTodo) {
       throw new BadRequest('You are not the creator, or this is not a valid todo')
     }
@@ -32,7 +32,7 @@ class CaptionImagesService {
   }
 
   async delete(id, userId) {
-    const todo = await dbContext.Todos.findOneAndRemove({ _id: id, creatorId: userId })
+    const todo = await dbContext.CaptionImages.findOneAndRemove({ _id: id, creatorId: userId })
     if (!todo) {
       throw new BadRequest('You are not the creator, or this is not a valid todo')
     }
@@ -40,4 +40,4 @@ class CaptionImagesService {
   }
 }
 
-export const todosService = new TodosService()
+export const captionImagesService = new CaptionImagesService()
