@@ -1,16 +1,13 @@
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
-import CaptionImage from './Models/CaptionImage.js'
-import CaptionString from "./Models/CaptionString.js"
+import Post from './Models/Post.js'
 
 class AppState extends EventEmitter {
   user = {}
   account = {}
   values = []
-  /**@type {CaptionImage []} */
-  captionImages = []
-  /**@type {CaptionString []} */
-  captionString = []
+  /**@type {Post []} */
+  posts = []
 
 }
 

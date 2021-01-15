@@ -1,28 +1,37 @@
 import { ProxyState } from "../AppState.js"
-import { captionImageService } from "../Services/CaptionImageService.js"
+import { postService } from "../Services/PostService.js"
 function _draw() {
   let template = ''
-  ProxyState.captionImages.forEach(i => {
+  ProxyState.posts.forEach(i => {
     template += i.Template
   })
   document.getElementById("imageField").innerHTML = template
 }
 
-export default class CaptionImageController {
+export default class PostController {
   constructor() {
-    ProxyState.on('captionImages', _draw)
+    ProxyState.on('posts', _draw)
+    this.getTop()
   }
 
   create(e) {
     e.preventDefault()
     let formdata = e.target
     let newImg = formdata.imageUrl.value
-    captionImageService.create(newImg)
+    postService.create(newImg)
   }
 
   getcomments(id) {
     try {
-      captionImageService.getcomments(id)
+      postService.getcomments(id)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  getTop(id, score) {
+    try {
+      postService.getTop(id, score)
     } catch (error) {
       console.error(error)
     }

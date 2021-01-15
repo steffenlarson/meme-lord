@@ -5,3 +5,9 @@ export const api = axios.create({
     timeout: 3000,
   withCredentials: true
 })
+
+
+export const memeapi = axios.create({
+  baseURL: "stuff",
+  withCredentials: true
+})
