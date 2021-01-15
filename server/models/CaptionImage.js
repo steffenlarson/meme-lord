@@ -6,7 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const CaptionImage = new Schema(
   {
-    submittedUser: { type: String, required: true },
+    creatorId: { type: String, required: true },
     winningUser: { type: String },
     category: { type: String },
     imgUrl: { type: String }
@@ -14,9 +14,9 @@ const CaptionImage = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
-CaptionImage.virtual('user', {
-  localField: 'submittedUser',
-  ref: 'User',
+CaptionImage.virtual('creator', {
+  localField: 'creatorId',
+  ref: 'Account',
   foreignField: '_id',
   justOne: true
 })

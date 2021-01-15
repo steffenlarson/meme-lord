@@ -3,15 +3,15 @@ import { BadRequest } from '../utils/Errors'
 
 class CaptionImagesService {
   async findSubmitted(userId) {
-    return await dbContext.CaptionImages.find({ submittedUser: userId }).populate('user')
+    return await dbContext.CaptionImages.find({ submittedUser: userId }).populate('creator')
   }
 
   async findWinning(userId) {
-    return await dbContext.CaptionImages.find({ winningUser: userId }).populate('user')
+    return await dbContext.CaptionImages.find({ winningUser: userId }).populate('creator')
   }
 
   async find(query = {}) {
-    const captionImages = await dbContext.CaptionImages.find(query).populate('user')
+    const captionImages = await dbContext.CaptionImages.find(query).populate('creator')
     return captionImages
   }
 
@@ -28,7 +28,7 @@ class CaptionImagesService {
   }
 
   async edit(captionImage) {
-    const newSubmittedUser = await dbContext.CaptionImages.findOneAndUpdate({ _id: captionImage.id, submittedUser: captionImage.submittedUser }, captionImage, { new: true }).populate('user')
+    const newSubmittedUser = await dbContext.CaptionImages.findOneAndUpdate({ _id: captionImage.id, submittedUser: captionImage.submittedUser }, captionImage, { new: true }).populate('creator')
     if (!newSubmittedUser) {
       throw new BadRequest('You are not the user, or this is not a valid caption image')
     }

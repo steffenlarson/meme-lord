@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
+import CaptionImage from "./CaptionImage";
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId
 
 
 const CaptionString = new Schema(
   {
-    submittedUser: { type: String, required: true },
+    creatorId: { type: String, required: true },
     captionImage: { type: String },
     caption: { type: String },
     score: { type: Number }
@@ -13,9 +14,9 @@ const CaptionString = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
-CaptionString.virtual('user', {
-  localField: 'submittedUser',
-  ref: 'User',
+CaptionString.virtual('creator', {
+  localField: 'creatorId',
+  ref: 'Account',
   foreignField: '_id',
   justOne: true
 })
@@ -26,5 +27,7 @@ CaptionString.virtual('image', {
   foreignField: '_id',
   justOne: true
 })
+
+
 
 export default CaptionString;

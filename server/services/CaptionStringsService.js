@@ -3,7 +3,7 @@ import { BadRequest } from '../utils/Errors'
 
 class CaptionStringsService {
   async find(query = {}) {
-    const captionString = await dbContext.CaptionStrings.find(query).populate('user')
+    const captionString = await dbContext.CaptionStrings.find(query).populate('creator')
     return captionString
   }
 
@@ -20,7 +20,7 @@ class CaptionStringsService {
   }
 
   async edit(captionString) {
-    const newCaptionString = await dbContext.CaptionStrings.findOneAndUpdate({ _id: captionString.id, submittedUser: captionString.submittedUser }, captionString, { new: true }).populate('user')
+    const newCaptionString = await dbContext.CaptionStrings.findOneAndUpdate({ _id: captionString.id, submittedUser: captionString.submittedUser }, captionString, { new: true }).populate('creator')
     if (!newCaptionString) {
       throw new BadRequest('You are not the creator, or this is not a valid Caption String')
     }
