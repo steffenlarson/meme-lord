@@ -28,7 +28,7 @@ class CaptionImagesService {
   }
 
   async edit(captionImage) {
-    const newSubmittedUser = await dbContext.CaptionImages.findOneAndUpdate({ _id: captionImage.id, submittedUser: captionImage.submittedUser }, captionImage, { new: true }).populate('creator')
+    const newSubmittedUser = await dbContext.CaptionImages.findOneAndUpdate({ _id: captionImage.id, creatorId: captionImage.creatorId }, captionImage, { new: true }).populate('creator')
     if (!newSubmittedUser) {
       throw new BadRequest('You are not the user, or this is not a valid caption image')
     }
@@ -36,7 +36,7 @@ class CaptionImagesService {
   }
 
   async delete(id, userId) {
-    const captionImage = await dbContext.CaptionImages.findOneAndRemove({ _id: id, submittedUser: userId })
+    const captionImage = await dbContext.CaptionImages.findOneAndRemove({ _id: id, creatorId: userId })
     if (!captionImage) {
       throw new BadRequest('You are not the user, or this is not a valid caption image')
     }

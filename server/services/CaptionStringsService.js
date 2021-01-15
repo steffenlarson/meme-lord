@@ -20,7 +20,7 @@ class CaptionStringsService {
   }
 
   async edit(captionString) {
-    const newCaptionString = await dbContext.CaptionStrings.findOneAndUpdate({ _id: captionString.id, submittedUser: captionString.submittedUser }, captionString, { new: true }).populate('creator')
+    const newCaptionString = await dbContext.CaptionStrings.findOneAndUpdate({ _id: captionString.id, creatorId: captionString.creatorId }, captionString, { new: true }).populate('creator')
     if (!newCaptionString) {
       throw new BadRequest('You are not the creator, or this is not a valid Caption String')
     }
@@ -28,7 +28,7 @@ class CaptionStringsService {
   }
 
   async delete(id, userId) {
-    const captionString = await dbContext.CaptionStrings.findOneAndRemove({ _id: id, submittedUser: userId })
+    const captionString = await dbContext.CaptionStrings.findOneAndRemove({ _id: id, creatorId: userId })
     if (!captionString) {
       throw new BadRequest('You are not the user, or this is not a valid Caption String')
     }
