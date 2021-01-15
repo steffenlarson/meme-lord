@@ -2,7 +2,7 @@ import { captionStringsService } from "../services/CaptionStringsService";
 import BaseController from "../utils/BaseController";
 import { Auth0Provider } from '@bcwdev/auth0provider'
 
-export class CaptionStringsService extends BaseController {
+export class CaptionStringsController extends BaseController {
   constructor() {
     super("api/users")
     this.router
