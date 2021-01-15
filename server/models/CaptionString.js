@@ -13,4 +13,11 @@ const CaptionString = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
+CaptionString.virtual('user', {
+  localField: 'submittedUser',
+  ref: 'User',
+  foreignField: '_id',
+  justOne: true
+})
+
 export default CaptionString;

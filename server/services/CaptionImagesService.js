@@ -2,12 +2,16 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CaptionImagesService {
-  async getProfileTodos(userId) {
-    return await dbContext.CaptionImages.find({ creatorId: userId }).populate('submittedUser')
+  async findSubmitted(userId) {
+    return await dbContext.CaptionImages.find({ submittedUser: userId }).populate('user')
+  }
+
+  async findWinning(userId) {
+    return await dbContext.CaptionImages.find({ winningUser: userId }).populate('user')
   }
 
   async find(query = {}) {
-    const captionImages = await dbContext.CaptionImages.find(query).populate('creator')
+    const captionImages = await dbContext.CaptionImages.find(query).populate('user')
     return captionImages
   }
 
@@ -23,18 +27,18 @@ class CaptionImagesService {
     return await dbContext.CaptionImages.create(body)
   }
 
-  async edit(todo) {
-    const newTodo = await dbContext.CaptionImages.findOneAndUpdate({ _id: todo.id, creatorId: todo.creatorId }, todo, { new: true }).populate('creator')
-    if (!newTodo) {
-      throw new BadRequest('You are not the creator, or this is not a valid todo')
+  async edit(captionImage) {
+    const newSubmittedUser = await dbContext.CaptionImages.findOneAndUpdate({ _id: captionImage.id, submittedUser: captionImage.submittedUser }, captionImage, { new: true }).populate('user')
+    if (!newSubmittedUser) {
+      throw new BadRequest('You are not the user, or this is not a valid caption image')
     }
-    return newTodo
+    return newSubmittedUser
   }
 
   async delete(id, userId) {
-    const todo = await dbContext.CaptionImages.findOneAndRemove({ _id: id, creatorId: userId })
+    const todo = await dbContext.CaptionImages.findOneAndRemove({ _id: id, submittedUser: userId })
     if (!todo) {
-      throw new BadRequest('You are not the creator, or this is not a valid todo')
+      throw new BadRequest('You are not the user, or this is not a valid caption image')
     }
     return 'successfully deleted'
   }

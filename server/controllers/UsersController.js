@@ -45,7 +45,7 @@ export class UsersController extends BaseController {
   }
   async getSubmittedImages(req, res, next) {
     try {
-      let data = await captionImagesService.find({ submittedUser: req.params.id })
+      let data = await captionImagesService.findSubmitted({ submittedUser: req.params.id })
       res.send(data)
     } catch (error) {
       next(error)
@@ -53,7 +53,7 @@ export class UsersController extends BaseController {
   }
   async getWinningImages(req, res, next) {
     try {
-      let data = await captionImagesService.find({ winningUser: req.params.id })
+      let data = await captionImagesService.findWinning({ winningUser: req.params.id })
       res.send(data)
     } catch (error) {
       next(error)

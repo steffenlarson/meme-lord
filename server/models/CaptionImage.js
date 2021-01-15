@@ -14,4 +14,11 @@ const CaptionImage = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
+CaptionImage.virtual('user', {
+  localField: 'submittedUser',
+  ref: 'User',
+  foreignField: '_id',
+  justOne: true
+})
+
 export default CaptionImage;
