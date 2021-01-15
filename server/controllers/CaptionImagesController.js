@@ -1,6 +1,7 @@
 import { captionImagesService } from "../services/CaptionImagesService";
 import { captionStringsService } from "../services/CaptionStringsService";
 import BaseController from "../utils/BaseController";
+import { Auth0Provider } from '@bcwdev/auth0provider'
 
 export class CaptionImagesController extends BaseController {
   constructor() {
@@ -9,7 +10,8 @@ export class CaptionImagesController extends BaseController {
       // NOTE add auth0
       .get("", this.getAll)
       .get("/:id", this.getById)
-      .get("/:id/captionstrings", this.getCaptionStrings) // api/classrooms/2l3rkj23l4/assignments
+      .get("/:id/captionstrings", this.getCaptionStrings)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.create)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
