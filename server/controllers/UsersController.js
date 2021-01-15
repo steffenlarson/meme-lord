@@ -14,7 +14,7 @@ export class UsersController extends BaseController {
       .get("/:id/captionstrings", this.getCaptionStrings)
       .get("/:id/submittedimages", this.getSubmittedImages)
       .get("/:id/winningimages", this.getWinningImages)
-      .use(Auth0Provider.getAuthorizedUserInfo)
+      // .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.create)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)

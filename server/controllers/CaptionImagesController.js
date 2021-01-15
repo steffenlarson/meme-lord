@@ -11,7 +11,7 @@ export class CaptionImagesController extends BaseController {
       .get("", this.getAll)
       .get("/:id", this.getById)
       .get("/:id/captionstrings", this.getCaptionStrings)
-      .use(Auth0Provider.getAuthorizedUserInfo)
+      // .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.create)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
