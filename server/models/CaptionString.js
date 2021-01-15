@@ -20,4 +20,11 @@ CaptionString.virtual('user', {
   justOne: true
 })
 
+CaptionString.virtual('image', {
+  localField: 'captionImage',
+  ref: 'CaptionImage',
+  foreignField: '_id',
+  justOne: true
+})
+
 export default CaptionString;
