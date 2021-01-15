@@ -16,11 +16,11 @@ class CaptionImagesService {
   }
 
   async findById(id) {
-    const todo = await dbContext.CaptionImages.findById(id)
-    if (!todo) {
+    const captionImage = await dbContext.CaptionImages.findById(id)
+    if (!captionImage) {
       throw new BadRequest('Invalid Id')
     }
-    return todo
+    return captionImage
   }
 
   async create(body) {
@@ -36,8 +36,8 @@ class CaptionImagesService {
   }
 
   async delete(id, userId) {
-    const todo = await dbContext.CaptionImages.findOneAndRemove({ _id: id, submittedUser: userId })
-    if (!todo) {
+    const captionImage = await dbContext.CaptionImages.findOneAndRemove({ _id: id, submittedUser: userId })
+    if (!captionImage) {
       throw new BadRequest('You are not the user, or this is not a valid caption image')
     }
     return 'successfully deleted'
