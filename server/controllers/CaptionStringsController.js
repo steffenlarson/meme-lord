@@ -4,7 +4,7 @@ import { Auth0Provider } from '@bcwdev/auth0provider'
 
 export class CaptionStringsController extends BaseController {
   constructor() {
-    super("api/users")
+    super("api/captionstrings")
     this.router
       // NOTE add auth0
       .get("", this.getAll)
