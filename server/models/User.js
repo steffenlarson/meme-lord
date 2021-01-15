@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const User = new Schema(
   {
-    _id: { type: String, required: true },
+    // _id: { type: String, required: true },
     username: { type: String, required: true },
     captionsWon: { type: Number },
     title: { type: String },
