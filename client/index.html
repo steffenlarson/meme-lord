@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -12,25 +14,10 @@
   <title>client</title>
 </head>
 
-<body>
+<body style="font-family: 'Teko', sans-serif;">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-        <span class="ml-2">client</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-        </div>
-      </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </nav>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,34 +39,29 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Misc</a>
           </li>
-          <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-      </div>
-    </nav> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+          </div>
+        </div>
+        <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav>
   </header>
   <main class="container-fluid">
-    <div class="row">
-      <div class="col-6 display-2 text-center">
+    <div class="row ">
+      <div class="col-8 display-1 text-center">
         <h1>MEMES</h1>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Create Meme
@@ -114,22 +96,25 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-8 d-flex justify-content-center" id="imageField">
+    <div class="row ">
+      <div class="col-8 d-flex text-align-center flex-column" id="imageField">
       </div>
       <div class="col-4" id="scoreboard">
 
         <div class="card">
-          <img class="card-img-top" src="holder.js/100x180/" alt="">
+
           <div class="card-body">
             <h4 class="card-title text-center">TOP MEME-ERS</h4>
-
+            <div id="scoreboard"></div>
             <p class="card-text">Meme Lord:</p>
 
-            <p>Meme Knights:</p>
+            <!-- Easier to make an ordered list and then take the array of the users based
+               on the sort function of how many winning posts that they have than to make multiple templates.
+              Need to sort an array of the objects which are the key value pairs. (The user : how many wins that user has)
+            Then just list the values for what place you are. -->
+            <p>Meme Knights 2-9:</p>
 
-            <p>Meme Serfs:</p>
-
+            <p>Meme Serfs 10-beyond:</p>
 
           </div>
         </div>
