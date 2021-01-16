@@ -3,6 +3,7 @@ import { audience, clientId, domain } from '../AuthConfig.js'
 import { memeapi } from './AxiosService.js'
 import { accountService } from './AccountService.js'
 
+// @ts-ignore
 export const AuthService = Auth0Provider.initialize({
   domain,
   clientId,

@@ -18,8 +18,8 @@ class PostService {
 
   async loadPosts() {
     let res = await memeapi.get("api/captionimages")
-    console.log(res.data)
-    ProxyState.posts = [res.data]
+    console.log(res.data[0])
+    ProxyState.posts = res.data.map(p=> new Post(p))
   }
 }
 

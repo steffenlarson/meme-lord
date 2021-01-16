@@ -4,7 +4,7 @@ import Comment from "./Comment.js"
 
 export default class Post {
   constructor(data) {
-    this.imgUrl = data.imgurl
+    this.imgUrl = data.imgUrl
     this.category = data.category
     this.id = data._id
     this.comments = []
