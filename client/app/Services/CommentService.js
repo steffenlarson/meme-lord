@@ -20,9 +20,10 @@ class CommentService {
 
   async create(id, newString) {
     let res = await memeapi.post('api/captionstrings', newString)
-    console.log(res.data)
     let current = ProxyState.posts.find(p => p.id == id)
-    current.captions = [...current.captions, newString]
+    console.log(new Comment(res.data))
+    current.captions = [...current.captions, new Comment(res.data)]
+    ProxyState.comments = [...ProxyState.comments, new Comment(res.data)]
   }
 
   async getComments() {
