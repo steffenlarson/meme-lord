@@ -2,136 +2,146 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script:wght@600&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-    <link rel="stylesheet" href="assets/style/main.css">
-    <title>client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <title>client</title>
 </head>
 
 <body>
-    <header>
-        
-           <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">All <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Music</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Misc</a>
+          </li>
           
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">All <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sports</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Games</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Music</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Misc</a>
-                  </li>
-               
-              
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                </div>
-            </div>
-            <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-        </nav>
-    </header>
-    <main class="container-fluid">
-        <div class="row">
-            <div class="col-10 text-center display-2 text-light">
-               <strong> Meme-Lord</strong>
-            </div>
-            <div class="col-2">
-                <button class="btn btn-success" data-dismiss="modal" aria-label="Close">
-                 +</button>
-            </div>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
         </div>
-        <div class="row justify-content-center">
-            <div class="col-8 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://placehold.it/600x500" alt="Card image cap">
-                    <div class="card-body">
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    </div>
-                  </div>
-                  <form class="p-4 form-inline" onsubmit="app.Controller.create(event)">
-                      <input type="text" name="new-comment" placeholder="Type your comment" id="" class="">
-                      <button class="btn btn-danger btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">+</button>
-                  </form>
-                  <!-- <div class="row">   
-                  <div class="col-6"> -->
-                  <div class="collapse text-white" id="collapseExample">
-                    <i class="fas fa-thumbs-up text-white"></i>
-                    
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh h
-                </div>
-                <!-- </div> -->
-                
-            </div>
-            <div class="col-4 ">
-              <ul calss="text-center" id="score-board">
-                  <li>something</li>
-                  <li>something</li>
-                  <li>something</li>
-              </ul>
-            </div>
+      </div>
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav>
+     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      
+      </div>
+    </nav> -->
+  </header>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-6 display-2 text-center">
+        <h1>MEMES</h1>
+      </div>
+      <div class="col-6">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
 
-        </div>
-        <!-- <div class="row my-3">
-            <div class="col-5">
-                <div class="card p-2 skeleton-loader">
-                    <div class="card-title p-2">
-                        <div class="d-flex align-items-center">
-                            <div class="skeleton-loader avatar"></div>
-                            <div class="skeleton-loader text mx-2"></div>
-                        </div>
-                    </div>
-                    <div class="card-body border-top">
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text"></div>
-                    </div>
-                </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Meme</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" onsubmit="app.postController.create()">
+                  <input type="text" name="imageUrl" id="imageUrl" placeholder="Image URL" required>
+                  <label for="category">Category of Image:</label>
+
+                  <select name="category" id="category">
+                    <option value="sports">Sports</option>
+                    <option value="games">Games</option>
+                    <option value="music">Music</option>
+                    <option value="misc">Misc</option>
+                  </select>
+
+                  <input type="text" name="initialCaption" id="initialCaption" placeholder="Initial Caption" required>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
             </div>
-        </div> -->
-    </main>
-    <footer class="container-fluid bg-dark text-light">
-        <div class="row text-center">
-            <div class="col">
-                <p><small>Made with love by Codeworks</small></p>
-            </div>
+          </div>
         </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.11/auth0-spa-js.production.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/AuthProvider.browser.js"></script>
-    <script src="app/main.js" type="module"></script>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 d-flex justify-content-center" id="imageField">
+      </div>
+      <div class="col-4" id="scoreboard">
+
+        <div class="card">
+          <img class="card-img-top" src="holder.js/100x180/" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-center">TOP MEME-ERS</h4>
+
+            <p class="card-text">Meme Lord:</p>
+
+            <p>Meme Knights:</p>
+
+            <p>Meme Serfs:</p>
+
+
+          </div>
+        </div>
+      </div>
+
+
+  </main>
+
+
+
+  <footer class="container-fluid bg-dark text-light">
+    <div class="row text-center">
+      <div class="col">
+        <p><small>Made with love by Codeworks</small></p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.11/auth0-spa-js.production.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/AuthProvider.browser.js"></script>
+  <script src="app/main.js" type="module"></script>
 </body>
 
 </html>

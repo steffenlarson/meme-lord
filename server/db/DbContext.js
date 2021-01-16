@@ -1,10 +1,12 @@
 import mongoose from 'mongoose'
-import ValueSchema from '../models/Value'
 import AccountSchema from '../models/Account'
+import CaptionImagesSchema from '../models/CaptionImage'
+import CaptionStringsSchema from '../models/CaptionString'
 
 class DbContext {
-  Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
+  CaptionImages = mongoose.model('CaptionImage', CaptionImagesSchema);
+  CaptionStrings = mongoose.model('CaptionString', CaptionStringsSchema)
 }
 
 export const dbContext = new DbContext()

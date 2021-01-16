@@ -1,7 +1,7 @@
 const base = window.location.host.includes('localhost') ? '//localhost:3000/' : '/'
 
-export const api = axios.create({
+// @ts-ignore
+export const memeapi = axios.create({
   baseURL: base,
-  timeout: 3000,
   withCredentials: true
 })
