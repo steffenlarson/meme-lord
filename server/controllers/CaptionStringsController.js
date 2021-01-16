@@ -6,7 +6,6 @@ export class CaptionStringsController extends BaseController {
   constructor() {
     super("api/captionstrings")
     this.router
-      // NOTE add auth0
       .get("", this.getAll)
       .get("/:id", this.getById)
       .use(Auth0Provider.getAuthorizedUserInfo)
@@ -14,6 +13,7 @@ export class CaptionStringsController extends BaseController {
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
   }
+
   async getAll(req, res, next) {
     try {
       let data = await captionStringsService.find(req.query)
@@ -22,6 +22,7 @@ export class CaptionStringsController extends BaseController {
       next(error)
     }
   }
+
   async getById(req, res, next) {
     try {
       let data = await captionStringsService.findById(req.params.id)
@@ -39,6 +40,7 @@ export class CaptionStringsController extends BaseController {
       next(error)
     }
   }
+
   async edit(req, res, next) {
     try {
       req.body.id = req.params.id
@@ -48,6 +50,7 @@ export class CaptionStringsController extends BaseController {
       next(error)
     }
   }
+
   async delete(req, res, next) {
     try {
       await captionStringsService.delete(req.params.id)

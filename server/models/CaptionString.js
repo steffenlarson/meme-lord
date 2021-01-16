@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import CaptionImage from "./CaptionImage";
 const Schema = mongoose.Schema;
-const ObjectId = mongoose.Schema.Types.ObjectId
-
 
 const CaptionString = new Schema(
   {
@@ -27,7 +25,5 @@ CaptionString.virtual('image', {
   foreignField: '_id',
   justOne: true
 })
-
-
 
 export default CaptionString;

@@ -1,4 +1,3 @@
-import { captionStringsService } from '../services/CaptionStringsService'
 import { captionImagesService } from '../services/CaptionImagesService'
 import BaseController from '../utils/BaseController'
 
