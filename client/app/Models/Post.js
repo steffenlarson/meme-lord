@@ -1,13 +1,11 @@
-import Comment from "./Comment.js"
 import { ProxyState } from "../AppState.js"
-
 
 export default class Post {
   constructor(data) {
     this.imgUrl = data.imgUrl
     this.category = data.category
     this.id = data._id
-    this.comments = []
+    this.captions = []
   }
 
   get Template() {
@@ -21,17 +19,19 @@ export default class Post {
           </form>
         </div>
         <div class="collapse" id="_${this.id}" style="min-height: 20vh;">
-          ${this.Comments}
+            <div>
+            ${this.Comments}
+            </div>
         </div>
 
     `
   }
-  
-  get Comments(){
-    let template = "";
-    let comments = ProxyState.comments.filter(c=> c.post_id == this.id);
-    console.log(ProxyState.comments)
-    comments.forEach(t=> template += t.Template);
-    return template;
+
+  get Comments() {
+    let template = ""
+    let comments = ProxyState.comments.filter(c => c.post_id == this.id)
+    comments.forEach(c => template += c.Template)
+    return template
   }
+
 }

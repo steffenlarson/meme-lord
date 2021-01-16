@@ -17,4 +17,4 @@ export default class User {
 }
 
 
-// bypassing the scoreboard model and just putting the template for the scoreboard here. Because all of the relevant info is here.
+//NOTE bypassing the scoreboard model and just putting the template for the scoreboard here. Because all of the relevant info is here.
