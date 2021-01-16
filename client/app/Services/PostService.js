@@ -15,9 +15,11 @@ class PostService {
     console.log(res.data)
     current.comments = [res.data]
   }
-  async getTop(id, score) {
-    let res = await memeapi.get('captionimages/' + id + "/captionstrings")
+
+  async loadPosts() {
+    let res = await memeapi.get("captionimages")
     console.log(res.data)
+    ProxyState.posts = [res.data]
   }
 }
 
