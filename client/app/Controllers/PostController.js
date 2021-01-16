@@ -25,7 +25,7 @@ export default class PostController {
     }
     try {
       postService.create(newPost)
-      
+
     } catch (error) {
       console.error(error)
     }
