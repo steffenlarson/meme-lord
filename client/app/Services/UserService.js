@@ -7,6 +7,7 @@ class UserService {
 
   async getUsers() {
     let res = await memeapi.get("api/users")
+    console.log(res)
     ProxyState.users = res.data.map(u => new User(u))
     ProxyState.user.captionswon.sort(function (a, b) { return b - a })
   }

@@ -5,7 +5,9 @@ export class UsersController extends BaseController {
   constructor() {
     super('api/users')
     this.router
+      .get('')
       .get('/:userId/winningimages', this.getUserWinningImages)
+
   }
 
   async getUserWinningImages(req, res, next) {
