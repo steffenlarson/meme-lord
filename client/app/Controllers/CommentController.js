@@ -1,12 +1,23 @@
 import { ProxyState } from "../AppState.js";
 import { commentService } from "../Services/CommentService.js"
 
-
+function _draw() {
+  let posts = ProxyState.posts;
+   
+  posts.forEach(i => {
+    let template = ''
+    i.comments.forEach(c => {
+      template += c.Template
+    })
+    document.getElementById(`_${i.id}`).innerHTML = template
+  })
+  
+} 
 
 export default class CommentController {
 
   constructor() {
-
+    ProxyState.on('comments', _draw)
   }
 
   create(e) {
