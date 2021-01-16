@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const CaptionImage = new Schema(
   {
-    creatorId: { type: String, required: true },
+    creatorId: { type: String },
     winningUser: { type: String },
     category: { type: String, required: true },
     imgUrl: { type: String, required: true }
