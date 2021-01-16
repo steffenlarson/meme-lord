@@ -34,10 +34,12 @@ class CommentService {
 
     let posts = ProxyState.posts;
     posts.forEach(i => {
-      let imageCaptions = ProxyState.comments.find(c => c.post_id === i.id)
+      let imageCaptions = ProxyState.comments.filter(c => c.post_id === i.id)
       if (imageCaptions)
       {
-        i.captions = [imageCaptions]
+        i.captions = [];
+        imageCaptions.forEach(c =>
+          i.captions.push(c))
       }
     })
 
