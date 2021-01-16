@@ -4,23 +4,22 @@ import Comment from "../Models/Comment.js"
 
 class CommentService {
   async downvote(id) {
-    console.log(res.data)
     let changed = ProxyState.comments.find(c => c.id == id)
     changed.score -= 1
     let res = await memeapi.put("api/captionstrings/" + id, changed)
 
   }
   async upvote(id) {
-    let res = await memeapi.get('api/captionstrings')
-    console.log(res.data)
+    this.getComments()
     let changed = ProxyState.comments.find(c => c.id === id)
     changed.score += 1
+    console.log(changed)
     await memeapi.put("api/captionstrings/" + id, changed)
 
   }
 
   async create(id, newString) {
-    let res = await memeapi.post('captionimages/' + id + "/captionstrings", newString)
+    let res = await memeapi.post('api/captionstrings', newString)
     console.log(res.data)
     let current = ProxyState.posts.find(p => p.id == id)
     current.captions = [...current.captions, newString]
@@ -29,6 +28,8 @@ class CommentService {
   async getComments() {
     let res = await memeapi.get("api/captionstrings")
     console.log(res.data)
+    ProxyState.comments = res.data.map(caption => new Comment(caption))
+    console.log(ProxyState.comments)
   }
 }
 
