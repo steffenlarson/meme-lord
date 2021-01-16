@@ -16,7 +16,7 @@
 
 <body style="font-family: 'Teko', sans-serif;">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light fixed-top mb-5">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,11 +57,11 @@
     </nav>
   </header>
   <main class="container-fluid">
-    <div class="row ">
-      <div class="col-8 display-1 text-center">
-        <h1>MEMES</h1>
+    <div class="row relative mt-5 pt-5">
+      <div class="col-6 offset-2 display-2 text-center fixed">
+        MEMES
       </div>
-      <div class="col-4">
+      <div class="col-2 offset-2 text-right">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Create Meme
@@ -97,12 +97,11 @@
       </div>
     </div>
     <div class="row ">
-      <div class="col-8 d-flex text-align-center flex-column" id="imageField">
+      <div class="col-4 offset-4 overflow-auto d-block m-auto flex-column" id="imageField">
       </div>
       <div class="col-4" id="scoreboard">
 
         <div class="card">
-
           <div class="card-body">
             <h4 class="card-title text-center">TOP MEME-ERS</h4>
             <div id="scoreboard"></div>
