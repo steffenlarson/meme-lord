@@ -1,7 +1,4 @@
 import Comment from "./Comment.js"
-
-
-
 export default class Post {
   constructor(data) {
     this.imgUrl = data.imgUrl
