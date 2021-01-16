@@ -1,6 +1,5 @@
 export default class Comment {
   constructor(data) {
-    console.log(data)
     this.id = data.id
     this.body = data.caption
     this.score = data.score

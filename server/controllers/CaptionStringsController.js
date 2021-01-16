@@ -53,7 +53,7 @@ export class CaptionStringsController extends BaseController {
 
   async delete(req, res, next) {
     try {
-      await captionStringsService.delete(req.params.id)
+      await captionStringsService.delete(req.params.id, req.userInfo.id)
       res.send("deleted");
     } catch (error) {
       next(error)

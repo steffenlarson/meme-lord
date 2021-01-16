@@ -14,7 +14,7 @@ export default class Post {
           <img src="${this.imgUrl}" class="card-img-top img-fluid " alt="">
           <div style="text-align: center;">
           <form id="commentForm" type="submit" onsubmit="app.commentController.create('${this.id}')">
-            <input type="text" name="newComment"  size="50" maxlength="50">
+            <input type="text" name="newComment"  size="50" minlength="1" maxlength="50">
             <button class="btn btn-success" type="submit">Submit Caption</button>
           </form>
           <button class="btn btn-danger" type="button" aria-expanded="false" aria-controls="commentField"

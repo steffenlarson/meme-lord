@@ -21,11 +21,11 @@ class CaptionStringsService {
   }
 
   async edit(captionString) {
-    const newCaptionString = await dbContext.CaptionStrings.findOneAndUpdate({ _id: captionString.id, creatorId: captionString.creatorId }, captionString, { new: true }).populate('creator')
-    if (!newCaptionString) {
+    let updated = await dbContext.CaptionStrings.findByIdAndUpdate(captionString.id, captionString, {new: true})
+    if (!updated) {
       throw new BadRequest('You are not the creator, or this is not a valid Caption String')
     }
-    return newCaptionString
+    return updated
   }
 
   async delete(id, userId) {

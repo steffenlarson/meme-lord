@@ -3,7 +3,7 @@ import { commentService } from "../Services/CommentService.js"
 
 function _draw() {
   let posts = ProxyState.posts;
-
+ 
   posts.forEach(i => {
     i.captions.sort((a, b) => (a.score < b.score) ? 1 : -1)
     if(i.captions[0])
@@ -44,8 +44,7 @@ export default class CommentController {
       caption: form.newComment.value,
       score: 0
     }
- 
-    console.log(newCaption);
+
     try {
       commentService.create(imageID, newCaption)
     } catch (error) {
@@ -55,18 +54,24 @@ export default class CommentController {
 
   upvote(id) {
     try {
-      commentService.upvote(id)
+      commentService.upvote(id).then(
+        _draw
+        )
     } catch (error) {
       console.error(error)
     }
+    
   }
 
   downvote(id) {
     try {
-      commentService.downvote(id)
+      commentService.downvote(id).then(
+        _draw
+        )
     } catch (error) {
       console.error(error)
     }
+
   }
 
 }
