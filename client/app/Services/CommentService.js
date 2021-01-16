@@ -5,6 +5,7 @@ import Comment from "../Models/Comment.js"
 class CommentService {
   async downvote(id, newScore) {
     await memeapi.post("api/" + id, newScore)
+
   }
   async upvote(id) {
 
@@ -16,6 +17,7 @@ class CommentService {
     current.comments = [...current.comments, newString]
   }
 }
+
 
 
 
