@@ -1,10 +1,10 @@
 export default class Comment {
   constructor(data) {
-    this.id = data._id
+    this.id = data.id
     this.body = data.caption
     this.score = data.score
     this.post_id = data.captionImage
-    this.user = data.creatorId
+    this.user = data.creator.id
   }
 
   get Template() {
