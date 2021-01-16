@@ -3,8 +3,8 @@ export default class Comment {
     this.id = data._id
     this.body = data.caption
     this.score = data.score
-    this.post_id = data.CaptionImage
-    this.user = data.SubmittedUser
+    this.post_id = data.captionImage
+    this.user = data.creatorId
   }
 
   get Template() {

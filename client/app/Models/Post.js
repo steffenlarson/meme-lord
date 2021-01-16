@@ -1,5 +1,5 @@
 import Comment from "./Comment.js"
-
+import { ProxyState } from "../AppState.js"
 
 
 export default class Post {
@@ -26,5 +26,11 @@ export default class Post {
 
     `
   }
-
+  
+  get Comments(){
+    let template = "";
+    let comments = ProxyState.comments.filter(c=> c.post_id == this.id);
+    comments.forEach(t=> template += t.Template);
+    return template;
+  }
 }
