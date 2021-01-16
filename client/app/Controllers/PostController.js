@@ -1,9 +1,9 @@
 import { ProxyState } from "../AppState.js"
 import { postService } from "../Services/PostService.js"
+
 function _draw() {
   let posts = ProxyState.posts;
-  console.log(ProxyState.posts);
-   let template = ''
+  let template = ''
   posts.forEach(i => {
     template += i.Template
   })

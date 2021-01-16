@@ -7,7 +7,8 @@ const Account = new Schema(
     _id: { type: String, required: true },
     email: { type: String, lowercase: true, unique: true },
     name: { type: String, required: true },
-    picture: { type: String }
+    picture: { type: String },
+    points: { type: Number }
   },
   { timestamps: true, _id: false, toJSON: { virtuals: true } }
 )

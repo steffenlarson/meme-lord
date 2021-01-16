@@ -1,7 +1,11 @@
 import { ProxyState } from "../AppState.js"
 import Post from "../Models/Post.js"
 import { memeapi } from "../Services/AxiosService.js"
+import Comment from "../Models/Comment.js"
 
+function loadComments() {
+
+}
 class PostService {
 
   async create(newImg) {
@@ -10,16 +14,16 @@ class PostService {
     ProxyState.posts = [...ProxyState.posts, img]
   }
   async getcomments(id) {
-    let res = await memeapi.get('api/captionimages/' + id + "/captionstrings")
+    let res = await memeapi.get('api/captionimages/' + id + '/captionstrings')
     let current = ProxyState.posts.find(p => p.id == id)
-    console.log(res.data)
-    current.comments = [res.data]
+    current.captions = res.data.map(c => new Comment(c));
+    ProxyState.comments = [...ProxyState.comments, res.data.map(c => new Comment(c))]
   }
+
 
   async loadPosts() {
     let res = await memeapi.get("api/captionimages")
-    console.log(res.data[0])
-    ProxyState.posts = res.data.map(p=> new Post(p))
+    ProxyState.posts = res.data.map(p => new Post(p))
   }
 }
 
