@@ -18,6 +18,15 @@ export default class CommentController {
 
   constructor() {
     ProxyState.on('comments', _draw)
+    this.getComments()
+  }
+
+  getComments() {
+    try {
+      commentService.getComments()
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   create(e) {
