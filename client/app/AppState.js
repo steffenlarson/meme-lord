@@ -2,6 +2,7 @@ import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
 import Post from './Models/Post.js'
 import Comment from './models/comment.js'
+import User from './Models/User.js'
 
 class AppState extends EventEmitter {
   user = {}
@@ -11,6 +12,8 @@ class AppState extends EventEmitter {
   posts = []
   /**@type {Comment[]} */
   comments = []
+  /**@type {User []} */
+  users = []
 
 }
 
