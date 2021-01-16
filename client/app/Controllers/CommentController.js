@@ -3,16 +3,16 @@ import { commentService } from "../Services/CommentService.js"
 
 function _draw() {
   let posts = ProxyState.posts;
-   
+
   posts.forEach(i => {
     let template = ''
-    i.comments.forEach(c => {
+    i.captions.forEach(c => {
       template += c.Template
     })
     document.getElementById(`_${i.id}`).innerHTML = template
   })
-  
-} 
+
+}
 
 export default class CommentController {
 
@@ -23,7 +23,9 @@ export default class CommentController {
   create(e) {
     e.preventDefault()
     let formdata = e.target
-    let newCaption = formdata.newComment.value
+    let newCaption = {
+      body: formdata.newComment.value
+    }
     try {
       commentService.create(newCaption)
     } catch (error) {
@@ -32,8 +34,6 @@ export default class CommentController {
   }
 
   upvote(id) {
-
-
     try {
       commentService.upvote(id)
     } catch (error) {
