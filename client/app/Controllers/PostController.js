@@ -11,7 +11,7 @@ function _draw() {
 export default class PostController {
   constructor() {
     ProxyState.on('posts', _draw)
-    this.getTop()
+    this.loadPosts();
   }
 
   create(e) {
@@ -36,9 +36,9 @@ export default class PostController {
     }
   }
 
-  getTop(id, score) {
+  loadPosts() {
     try {
-      postService.getTop(id, score)
+      postService.loadPosts()
     } catch (error) {
       console.error(error)
     }
