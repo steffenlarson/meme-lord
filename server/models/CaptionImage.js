@@ -6,8 +6,8 @@ const CaptionImage = new Schema(
   {
     creatorId: { type: String, required: true },
     winningUser: { type: String },
-    category: { type: String },
-    imgUrl: { type: String }
+    category: { type: String, required: true },
+    imgUrl: { type: String, required: true }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );

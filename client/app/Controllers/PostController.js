@@ -1,8 +1,10 @@
 import { ProxyState } from "../AppState.js"
 import { postService } from "../Services/PostService.js"
 function _draw() {
-  let template = ''
-  ProxyState.posts.forEach(i => {
+  let posts = ProxyState.posts;
+  console.log(ProxyState.posts);
+   let template = ''
+  posts.forEach(i => {
     template += i.Template
   })
   document.getElementById("imageField").innerHTML = template
