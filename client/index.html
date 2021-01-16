@@ -90,12 +90,22 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create Meme</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form action="" onsubmit="app.postController.create()">
-                  <input type="text" name="imageUrl" id="imageUrl" placeholder="enter image url">
+                  <input type="text" name="imageUrl" id="imageUrl" placeholder="Image URL" required>
+                  <label for="category">Category of Image:</label>
+
+                  <select name="category" id="category">
+                    <option value="sports">Sports</option>
+                    <option value="games">Games</option>
+                    <option value="music">Music</option>
+                    <option value="misc">Misc</option>
+                  </select>
+
+                  <input type="text" name="initialCaption" id="initialCaption" placeholder="Initial Caption" required>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>

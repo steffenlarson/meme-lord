@@ -5,7 +5,7 @@ import { memeapi } from "../Services/AxiosService.js"
 class PostService {
 
   async create(newImg) {
-    await memeapi.post('captionimage', newImg)
+    await memeapi.post('captionimages', newImg)
     let img = new Post(newImg)
     ProxyState.posts = [...ProxyState.posts, img]
   }
@@ -15,9 +15,11 @@ class PostService {
     console.log(res.data)
     current.comments = [res.data]
   }
-  async getTop(id, score) {
-    let res = await memeapi.get('captionimages/' + id + "/captionstrings")
+
+  async loadPosts() {
+    let res = await memeapi.get("captionimages")
     console.log(res.data)
+    ProxyState.posts = [res.data]
   }
 }
 
