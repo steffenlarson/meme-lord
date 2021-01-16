@@ -2,14 +2,14 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CaptionImagesService {
+
   async getUserWinningImages(userId) {
     return dbContext.CaptionImages.find({ winningUser: userId }).populate('creator')
   }
+
   async findSubmitted(userId) {
     return await dbContext.CaptionImages.find({ submittedUser: userId }).populate('creator')
   }
-
-
 
   async find(query = {}) {
     const captionImages = await dbContext.CaptionImages.find(query).populate('creator')

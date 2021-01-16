@@ -7,7 +7,6 @@ export class CaptionImagesController extends BaseController {
   constructor() {
     super("api/captionimages")
     this.router
-      // NOTE add auth0
       .get("", this.getAll)
       .get("/:id", this.getById)
       .get("/:id/captionstrings", this.getCaptionStrings)
@@ -16,6 +15,7 @@ export class CaptionImagesController extends BaseController {
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
   }
+
   async getAll(req, res, next) {
     try {
       let data = await captionImagesService.find(req.query)
@@ -24,6 +24,7 @@ export class CaptionImagesController extends BaseController {
       next(error)
     }
   }
+
   async getById(req, res, next) {
     try {
       let data = await captionImagesService.findById(req.params.id)
@@ -32,6 +33,7 @@ export class CaptionImagesController extends BaseController {
       next(error)
     }
   }
+
   async getCaptionStrings(req, res, next) {
     try {
       let data = await captionStringsService.find({ captionImage: req.params.id })
@@ -49,6 +51,7 @@ export class CaptionImagesController extends BaseController {
       next(error)
     }
   }
+
   async edit(req, res, next) {
     try {
       req.body.id = req.params.id
@@ -58,6 +61,7 @@ export class CaptionImagesController extends BaseController {
       next(error)
     }
   }
+
   async delete(req, res, next) {
     try {
       await captionImagesService.delete(req.params.id)

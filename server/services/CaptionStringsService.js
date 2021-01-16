@@ -2,6 +2,7 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CaptionStringsService {
+
   async find(query = {}) {
     const captionString = await dbContext.CaptionStrings.find(query).populate('creator')
     return captionString
