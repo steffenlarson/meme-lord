@@ -17,7 +17,7 @@ class PostService {
   async getcomments(id) {
     let res = await memeapi.get('api/captionimages/' + id + '/captionstrings')
     let current = ProxyState.posts.find(p => p.id == id)
-    current.comments = res.data.map(c=> new Comment(c));
+    current.captions = res.data.map(c=> new Comment(c));
     ProxyState.comments = [...ProxyState.comments, res.data.map(c=> new Comment(c))]
   }
 
