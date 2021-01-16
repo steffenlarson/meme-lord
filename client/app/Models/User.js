@@ -8,4 +8,10 @@ export default class User {
     this.title = data.title
   }
 
+  get ScoreboardTemplate() {
+    return `
+    
+    `
+  }
+
 }
