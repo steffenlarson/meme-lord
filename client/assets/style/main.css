@@ -10695,4 +10695,9 @@ main {
   flex-grow: 1;
 }
 
+
+.rAlign {
+  float: right;
+}
+
 /*# sourceMappingURL=main.css.map */

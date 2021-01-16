@@ -19,9 +19,7 @@ export default class Post {
           </form>
         </div>
         <div class="collapse" id="_${this.id}" style="min-height: 20vh;">
-            <div>
             ${this.Comments}
-            </div>
         </div>
 
     `

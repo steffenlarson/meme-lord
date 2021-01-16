@@ -5,6 +5,11 @@ function _draw() {
   let posts = ProxyState.posts;
 
   posts.forEach(i => {
+    i.captions.sort((a, b) => (a.score < b.score) ? 1 : -1)
+    if(i.captions[0])
+    {
+      
+    }
     let template = ''
     i.captions.forEach(c => {
       template += c.Template
