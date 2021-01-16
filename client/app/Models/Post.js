@@ -12,8 +12,8 @@ export default class Post {
 
   get Template() {
     return `
-         <div class="card" style="width: 18rem;">
-          <img src="${this.imgUrl}" class="card-img-top img-fluid" alt="">
+         <div class="card w-100">
+          <img src="${this.imgUrl}" class="card-img-top img-fluid " alt="">
           <form onsubmit="app.commentController.create()">
             <input type="text" name="newComment" id="" maxlength="50" onsubmit="app.captionStringController.create()">
             <button class="btn btn-danger" type="button" aria-expanded="false" aria-controls="commentField"
