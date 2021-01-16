@@ -1,10 +1,10 @@
 import { ProxyState } from '../AppState.js'
-import { api } from './AxiosService.js'
+import { memeapi } from './AxiosService.js'
 
 class AccountService {
   async getAccount() {
     try {
-      const res = await api.get('/account')
+      const res = await memeapi.get('/account')
       ProxyState.account = res.data
       console.log(res.data)
     } catch (err) {

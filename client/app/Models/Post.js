@@ -1,4 +1,4 @@
-import CaptionString from "./CaptionString"
+import Comment from "./Comment.js"
 
 
 
