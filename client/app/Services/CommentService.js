@@ -8,7 +8,9 @@ class CommentService {
 
   }
   async upvote(id) {
-
+    let changed = ProxyState.comments.find(c => c.id === id)
+    changed.score += 1
+    await memeapi.put("api/commnets" + id, changed)
   }
 
   async create(id, newString) {

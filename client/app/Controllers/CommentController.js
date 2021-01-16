@@ -21,8 +21,6 @@ export default class CommentController {
   }
 
   upvote(id) {
-
-
     try {
       commentService.upvote(id)
     } catch (error) {
