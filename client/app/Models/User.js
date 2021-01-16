@@ -8,4 +8,13 @@ export default class User {
     this.title = data.title
   }
 
+  get ScoreboardTemplate() {
+    return `
+    
+    `
+  }
+
 }
+
+
+// bypassing the scoreboard model and just putting the template for the scoreboard here. Because all of the relevant info is here.

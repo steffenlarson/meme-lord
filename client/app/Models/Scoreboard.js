@@ -9,9 +9,5 @@ export default class Scoreboard {
   }
 
 
-  get Template() {
-    return `
-    
-    `
-  }
+
 }
