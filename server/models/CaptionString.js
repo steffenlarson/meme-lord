@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const CaptionString = new Schema(
   {
-    creatorId: { type: String, required: true },
+    creatorId: { type: String },
     captionImage: { type: String },
     caption: { type: String },
     score: { type: Number }
