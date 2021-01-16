@@ -17,9 +17,13 @@ export default class PostController {
   create(e) {
     e.preventDefault()
     let formdata = e.target
-    let newImg = formdata.imageUrl.value
+    let newPost = {
+      imgUrl: formdata.imageUrl.value,
+      category: formdata.category.value,
+      comments: formdata.intialCaption.value
+    }
     try {
-      postService.create(newImg)
+      postService.create(newPost)
     } catch (error) {
       console.error(error)
     }
