@@ -8,7 +8,7 @@ function _draw() {
     i.captions.sort((a, b) => (a.score < b.score) ? 1 : -1)
     if(i.captions[0])
     {
-      
+
     }
     let template = ''
     i.captions.forEach(c => {
@@ -34,14 +34,20 @@ export default class CommentController {
     }
   }
 
-  create(e) {
-    e.preventDefault()
-    let formdata = e.target
+  create(imageID) {
+    window.event.preventDefault()
+    let form = window.event.target
     let newCaption = {
-      body: formdata.newComment.value
+      creatorId: ProxyState.account._id,
+      captionImage: imageID,
+      // @ts-ignore
+      caption: form.newComment.value,
+      score: 0
     }
+ 
+    console.log(newCaption);
     try {
-      commentService.create(newCaption)
+      commentService.create(imageID, newCaption)
     } catch (error) {
       console.error(error)
     }
