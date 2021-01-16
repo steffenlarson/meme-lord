@@ -20,4 +20,22 @@ export default class CommentController {
     }
   }
 
+  upvote(id) {
+
+
+    try {
+      commentService.upvote(id)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  downvote(id) {
+    try {
+      commentService.downvote(id)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
 }
