@@ -5,6 +5,7 @@ export default class Post {
     this.imgUrl = data.imgUrl
     this.category = data.category
     this.id = data._id
+    this.winningUser = data.winningUser
     this.captions = []
   }
 

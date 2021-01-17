@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js"
+import { commentService } from "../Services/CommentService.js";
 import { postService } from "../Services/PostService.js"
 
 function _draw() {
@@ -16,19 +17,23 @@ export default class PostController {
     this.loadPosts();
   }
 
-  create(e) {
-    e.preventDefault()
-    let formdata = e.target
+  create() {
+    window.event.preventDefault()
+    let form = window.event.target
     let newPost = {
-      imageUrl: formdata['imageUrl'].value,
-      category: formdata['category'].value
+      imgUrl: form['imgUrl'].value,
+      category: form['category'].value
     }
-    try {
-      postService.create(newPost)
 
+    try {
+      let imgId = postService.createWithInitialCaption(newPost, form['initialCaption'].value);
     } catch (error) {
       console.error(error)
     }
+    // @ts-ignore
+    form.reset()
+    // @ts-ignore
+    $("#exampleModal").modal('hide');
   }
   getcomments(id) {
     try {

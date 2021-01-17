@@ -70,7 +70,7 @@
       <div class="col-4 text-left">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
+          Create Meme
         </button>
 
         <!-- Modal -->
@@ -83,7 +83,7 @@
               </div>
               <div class="modal-body">
                 <form action="" onsubmit="app.postController.create()">
-                  <input type="text" name="imageUrl" id="imageUrl" placeholder="Image URL" required>
+                  <input type="text" name="imgUrl" id="imgUrl" placeholder="Image URL" required>
                   <label for="category">Category of Image:</label>
 
                   <select name="category" id="category">
@@ -131,6 +131,9 @@
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>

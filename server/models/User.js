@@ -19,6 +19,12 @@ User.virtual('creator', {
   justOne: true
 })
 
+User.virtual('un', {
+  localField: 'username',
+  ref: 'Account',
+  foreignField: 'name',
+  justOne: true
+})
 
 
 export default User;

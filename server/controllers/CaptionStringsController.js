@@ -8,7 +8,7 @@ export class CaptionStringsController extends BaseController {
     this.router
       .get("", this.getAll)
       .get("/:id", this.getById)
-      .use(Auth0Provider.getAuthorizedUserInfo)
+
       .post("", this.create)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
