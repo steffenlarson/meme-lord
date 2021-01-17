@@ -1,4 +1,4 @@
-import { ProxyState } from "../AppState.js"
+import { ProxyState } from '../AppState.js'
 
 export default class Post {
   constructor(data) {
