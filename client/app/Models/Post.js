@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import { ProxyState } from '../AppState.js'
 
 export default class Post {
@@ -10,7 +11,7 @@ export default class Post {
 
   get Template() {
     return `
-         <div class="card w-100">
+         <div class="card" style="width:30rem">
           <img src="${this.imgUrl}" class="card-img-top img-fluid " alt="">
           <div style="text-align: center;">
           <form id="commentForm" type="submit" onsubmit="app.commentController.create('${this.id}')">
@@ -29,10 +30,9 @@ export default class Post {
   }
 
   get Comments() {
-    let template = ""
-    let comments = ProxyState.comments.filter(c => c.post_id == this.id)
+    let template = ''
+    const comments = ProxyState.comments.filter(c => c.post_id === this.id)
     comments.forEach(c => template += c.Template)
     return template
   }
-
 }

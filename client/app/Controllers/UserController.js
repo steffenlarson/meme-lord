@@ -1,8 +1,11 @@
+/* eslint-disable no-console */
+/* eslint-disable prefer-const */
+/* eslint-disable quotes */
 import { ProxyState } from "../AppState.js"
 import { userService } from "../Services/UserService.js"
 
 function _draw() {
-  let users = ProxyState.users;
+  let users = ProxyState.users
   let template = ''
   // ??????????????????? - Tim
   users.forEach(u => {
@@ -12,7 +15,6 @@ function _draw() {
 }
 
 export default class UserController {
-
   constructor() {
     ProxyState.on('comments', _draw)
     this.getUsers()
@@ -25,5 +27,4 @@ export default class UserController {
       console.error(error)
     }
   }
-
 }

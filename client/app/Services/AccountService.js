@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { ProxyState } from '../AppState.js'
 import { memeapi } from './AxiosService.js'
 

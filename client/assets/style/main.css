@@ -64,6 +64,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f2f2f2;
+  position: relative;
 }
 
 .score {
@@ -10726,6 +10727,68 @@ main {
 
 .cAlign {
   float;
+}
+
+.navBar{
+  box-shadow: 1px 4px 10px grey;
+  background: rgba(2, 2, 4, 0.6);
+}
+
+.title{
+  text-shadow: 6px 6px 10px #3700ff;
+}
+.title2{
+  text-shadow: 6px 6px 10px #FF0000;
+}
+.hidden{
+  display: none !important;
+}
+
+.sticky {
+  position: sticky;
+  /* position: -webkit-sticky; */
+  top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 0 6px lime; */
+  z-index: 1;
+  
+}
+.sticky1 {
+  position: sticky;
+  /* position: -webkit-sticky; */
+  top: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 0 6px lime; */
+  z-index: 1;
+}
+.sticky2 {
+  position: fixed;
+  /* position: -webkit-sticky; */
+  top: 380px;
+  right: 60px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  /* box-shadow: 0 0 6px lime; */
+  
+}
+#teamBlue {
+  /* width: 100px;
+  height: 50px;
+  background-color: red; */
+  font-weight: bold;
+  position: relative;
+  animation: mymove 40s infinite;
+}
+#teamBlue {animation-timing-function: linear;}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 4000px;}
 }
 
 /*# sourceMappingURL=main.css.map */

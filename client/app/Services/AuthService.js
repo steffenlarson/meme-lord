@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { ProxyState } from '../AppState.js'
 import { audience, clientId, domain } from '../AuthConfig.js'
 import { memeapi } from './AxiosService.js'

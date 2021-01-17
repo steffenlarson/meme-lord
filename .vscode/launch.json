@@ -5,6 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "mongodb+srv://classroom:classroom1234@cluster0.ubmg4.mongodb.net/meme-lord?retryWrites=true&w=majority"
+        },
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+        
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
