@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ProxyState } from '../AppState.js'
 
 export default class User {
