@@ -1,20 +1,20 @@
+/* eslint-disable no-unused-vars */
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
 import Post from './Models/Post.js'
-import Comment from './models/comment.js'
+import Comment from './Models/comment.js'
 import User from './Models/User.js'
 
 class AppState extends EventEmitter {
   user = {}
   account = {}
   values = []
-  /**@type {Post []} */
+  /** @type {Post []} */
   posts = []
-  /**@type {Comment[]} */
+  /** @type {Comment[]} */
   comments = []
-  /**@type {User []} */
+  /** @type {User []} */
   users = []
-
 }
 
 export const ProxyState = new Proxy(new AppState(), {

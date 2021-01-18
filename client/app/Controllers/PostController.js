@@ -26,7 +26,6 @@ export default class PostController {
   constructor() {
     ProxyState.on('posts', _draw)
     this.loadPosts()
-    _draw()
   }
 
   create() {

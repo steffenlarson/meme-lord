@@ -12,7 +12,7 @@ export default class Post {
 
   get Template() {
     return `
-         <div class="card" style="width:30rem">
+         <div class="card shadow mb-3" style="width:30rem">
           <img src="${this.imgUrl}" class="card-img-top img-fluid " alt="">
           <div style="text-align: center;">
           <form id="commentForm" type="submit" onsubmit="app.commentController.create('${this.id}')">

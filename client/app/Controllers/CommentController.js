@@ -67,7 +67,7 @@ function _draw() {
   }
 
   let template = `
-            <div class="card">
+            <div class="card shadow bg-dark text-light">
           <div class="card-body">
             <h4 class="card-title text-center">TOP MEME-ERS</h4>
             <div id="scoreboard"></div>
