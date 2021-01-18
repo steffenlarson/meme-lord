@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
 /* eslint-disable quotes */
@@ -5,15 +6,34 @@ import { ProxyState } from "../AppState.js"
 import Post from "../Models/Post.js"
 import { memeapi } from "../Services/AxiosService.js"
 import Comment from "../Models/Comment.js"
+import { commentService } from "../Services/CommentService.js"
 
 function loadComments() {
 
 }
 class PostService {
   async create(newImg) {
-    await memeapi.post('api/captionimages', newImg)
+    let imgId = await memeapi.post('api/captionimages', newImg)
     let img = new Post(newImg)
     ProxyState.posts = [...ProxyState.posts, img]
+    return imgId;
+  }
+
+  async createWithInitialCaption(newImg, caption) {
+    let res = await memeapi.post('api/captionimages', newImg)
+    let img = new Post(newImg)
+    img.id = res.data.id;
+    ProxyState.posts = [...ProxyState.posts, img]
+
+    let newComment = {
+      creatorId: ProxyState.account._id,
+      captionImage: res.data.id,
+      // @ts-ignore
+      caption: caption,
+      score: 0
+    }
+
+    commentService.create(res.data.id, newComment);
   }
 
   async getcomments(id) {

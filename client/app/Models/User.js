@@ -3,30 +3,9 @@ import { ProxyState } from '../AppState.js'
 export default class User {
   constructor(data) {
     this.id = data._id
-    this.username = data.username
+    this.username = data.name
     this.captionswon = data.captionswon
     this.title = data.title
-    this.memeLord = ProxyState.users.slice(0, 1)
-    this.memeKnights = ProxyState.users.slice(1, 10)
-    this.memeSerfs = ProxyState.users.slice(10, ProxyState.users.length)
-  }
-
-  get Template() {
-    return `
-
-      
-            <div class="card">
-          <div class="card-body">
-            <h4 class="card-title text-center">TOP MEME-ERS</h4>
-            <div id="scoreboard"></div>
-            <p class="card-text">Meme Lord:</p> <p>${this.memeLord} </p>
-            <p>Meme Knights:</p> <p>${this.memeKnights}</p>
-            <p>Meme Serfs:</p> <p>${this.memeSerfs}
-
-          </div>
-        </div>
-
-    `
   }
 }
 

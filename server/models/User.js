@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable quotes */
+/* eslint-disable semi */
 import mongoose from "mongoose";
 import CaptionImage from "./CaptionImage";
 const Schema = mongoose.Schema;
@@ -19,11 +22,14 @@ User.virtual('creator', {
   justOne: true
 })
 
-
+User.virtual('un', {
+  localField: 'username',
+  ref: 'Account',
+  foreignField: 'name',
+  justOne: true
+})
 
 export default User;
-
-
 
 // this.id = data._id
 // this.username = data.username

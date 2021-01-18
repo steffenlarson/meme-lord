@@ -10,7 +10,6 @@ class CommentService {
     this.getComments()
     let changed = ProxyState.comments.find(c => c.id === id)
     changed.score -= 1
-    console.log(changed)
     await memeapi.put("api/captionstrings/" + id, changed)
     await this.getComments()
   }
@@ -19,7 +18,6 @@ class CommentService {
     this.getComments()
     let changed = ProxyState.comments.find(c => c.id === id)
     changed.score += 1
-    console.log(changed)
     await memeapi.put("api/captionstrings/" + id, changed)
     await this.getComments()
   }

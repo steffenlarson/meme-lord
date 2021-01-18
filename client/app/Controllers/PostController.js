@@ -1,7 +1,11 @@
+/* eslint-disable semi */
+/* eslint-disable no-unused-vars */
+/* eslint-disable dot-notation */
 /* eslint-disable no-console */
 /* eslint-disable prefer-const */
 /* eslint-disable quotes */
 import { ProxyState } from "../AppState.js"
+import { commentService } from "../Services/CommentService.js";
 import { postService } from "../Services/PostService.js"
 
 function _draw() {
@@ -27,18 +31,21 @@ export default class PostController {
 
   create() {
     window.event.preventDefault()
-    let formdata = window.event.target
+    let form = window.event.target
     let newPost = {
-      imageUrl: formdata.imageUrl.value,
-      category: formdata.category.value
+      imgUrl: form['imgUrl'].value,
+      category: form['category'].value
     }
+
     try {
-      postService.create(newPost)
-      formdata.reset()
-      // `${('#exampleModal').modal("hide")}`
+      let imgId = postService.createWithInitialCaption(newPost, form['initialCaption'].value);
     } catch (error) {
       console.error(error)
     }
+    // @ts-ignore
+    form.reset()
+    // @ts-ignore
+    // $("#exampleModal").modal('hide');
   }
 
   getcomments(id) {

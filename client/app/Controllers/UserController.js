@@ -16,7 +16,8 @@ function _draw() {
 
 export default class UserController {
   constructor() {
-    ProxyState.on('comments', _draw)
+    ProxyState.on("users", _draw)
+    _draw()
     this.getUsers()
   }
 
